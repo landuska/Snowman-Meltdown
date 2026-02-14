@@ -40,6 +40,10 @@ def play_game():
             print("You already guessed that letter")
             continue
 
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter a single letter")
+            continue
+
         guessed_letters.add(guess)
 
         if guess in secret_word:
