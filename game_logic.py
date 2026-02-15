@@ -7,13 +7,13 @@ MAX_ATTEMPTS = 3
 
 
 def get_random_word():
-    """Selects a random word from the list."""
+    """Selects a random word from the list"""
 
     return WORDS[random.randint(0, len(WORDS) - 1)]
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
-    """This function displays the game state."""
+    """This function displays the game state"""
 
     print("-" * 40)
     print(STAGES[mistakes])
@@ -26,6 +26,18 @@ def display_game_state(mistakes, secret_word, guessed_letters):
             display_word += "_ "
     print("Word: " + display_word.strip())
     print("-" * 40)
+
+
+def ask_to_play():
+    """This function asks the user to play the game again"""
+    while True:
+        user_input = input("Do you want to play one more time? (y/n): ").lower().strip()
+
+        if user_input == "y":
+            play_game()
+        else:
+            print("Bye bye!")
+            break
 
 
 def play_game():
