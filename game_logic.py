@@ -3,14 +3,19 @@ from ascii_art import STAGES
 
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
+MAX_ATTEMPTS = 3
 
 
 def get_random_word():
     """Selects a random word from the list."""
+
     return WORDS[random.randint(0, len(WORDS) - 1)]
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
+    """This function displays the game state."""
+
+    print("-" * 40)
     print(STAGES[mistakes])
 
     display_word = ""
@@ -20,6 +25,7 @@ def display_game_state(mistakes, secret_word, guessed_letters):
         else:
             display_word += "_ "
     print("Word: " + display_word.strip())
+    print("-" * 40)
 
 
 def play_game():
@@ -27,8 +33,9 @@ def play_game():
     mistakes = 0
     guessed_letters = set()
 
-    print("Welcome to Snowman Meltdown!")
-    print("Secret word selected: " + secret_word)  # for testing, later remove this line
+    print("*" * 40)
+    print("***** Welcome to Snowman Meltdown! *****")
+    print("*" * 40)
 
     while mistakes < len(STAGES) - 1:
 
@@ -50,6 +57,8 @@ def play_game():
             print("well done!")
         else:
             mistakes += 1
+            print("sorry, that letter is not in the word")
+            print(f"You used {mistakes} attempt out of {MAX_ATTEMPTS}")
 
         if all(letter in guessed_letters for letter in secret_word):
             display_game_state(mistakes, secret_word, guessed_letters)
@@ -57,4 +66,5 @@ def play_game():
             return
 
     display_game_state(mistakes, secret_word, guessed_letters)
+    print("-" * 40)
     print(f"Game over! The word was: {secret_word}")
