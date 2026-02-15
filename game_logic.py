@@ -3,7 +3,7 @@ from ascii_art import STAGES
 
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = len(STAGES) - 1
 
 
 def get_random_word():
