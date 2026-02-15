@@ -45,6 +45,8 @@ def ask_to_play():
 
 
 def play_game():
+    """This function plays the game"""
+
     secret_word = get_random_word()
     mistakes = 0
     guessed_letters = set()
