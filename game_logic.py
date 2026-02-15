@@ -33,6 +33,10 @@ def ask_to_play():
     while True:
         user_input = input("Do you want to play one more time? (y/n): ").lower().strip()
 
+        if not user_input:
+            print("Please enter your answer")
+            continue
+
         if user_input == "y":
             play_game()
         else:
@@ -55,12 +59,12 @@ def play_game():
 
         guess = input("Guess a letter: ").lower().strip()
 
-        if guess in guessed_letters:
-            print("You already guessed that letter")
+        if len(guess) != 1 or not guess.isalpha() or not guess:
+            print("Please enter a single letter")
             continue
 
-        if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single letter")
+        if guess in guessed_letters:
+            print("You already guessed that letter")
             continue
 
         guessed_letters.add(guess)
