@@ -66,10 +66,10 @@ def play_game():
         guessed_letters.add(guess)
 
         if guess in secret_word:
-            print("well done!")
+            print("Well done!")
         else:
             mistakes += 1
-            print("sorry, that letter is not in the word")
+            print("Sorry, that letter is not in the word")
             print(f"You used {mistakes} attempt out of {MAX_ATTEMPTS}")
 
         if all(letter in guessed_letters for letter in secret_word):

@@ -14,14 +14,35 @@ STAGES = [
     /___\\ 
     (o o) 
     ( : ) 
+     ( ) 
     """,
-    # Stage 2: Only the head remains
+    # Stage 2
+    """
+     ___  
+    /___\\ 
+    (o o) 
+    ( : ) 
+    """,
+    # Stage 3: Middle part starts melting
+    """
+     ___  
+    /___\\ 
+    (o o) 
+     ( ) 
+    """,
+    # Stage 4: Only the head remains
     """
      ___  
     /___\\ 
     (o o) 
     """,
-    # Stage 3: Snowman completely melted
+    # Stage 5
+    """
+     ___  
+    /___\\ 
+     ( ) 
+    """,
+    # Stage 6: Snowman completely melted
     """
      ___  
     /___\\ 
